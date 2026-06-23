@@ -1,0 +1,8 @@
+{
+  "app": {
+    "title": "Colony Combo",
+    "subtitle": "Colonia de supervivientes",
+    "intro": "La primera versión prepara dominio, interfaz y traducciones sin acoplar la lógica a Vue.",
+    "enter": "Entrar a la colonia"
+  }
+}

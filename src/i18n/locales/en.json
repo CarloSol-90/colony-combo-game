@@ -1,0 +1,8 @@
+{
+  "app": {
+    "title": "Colony Combo",
+    "subtitle": "Survivor colony",
+    "intro": "The first version sets up domain, UI, and translations without coupling game logic to Vue.",
+    "enter": "Enter the colony"
+  }
+}
