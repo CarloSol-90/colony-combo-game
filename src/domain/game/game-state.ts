@@ -1,4 +1,5 @@
 import { createInitialPlayerState, type PlayerState } from '@/domain/player/player-state'
+import { createInitialMarketState, type MarketState } from '@/domain/market/market-state'
 export { INITIAL_BATTERIES, INITIAL_CAPITAL } from './game-resources'
 
 export type GamePhase = 'setup' | 'turn' | 'finished'
@@ -13,9 +14,18 @@ export interface GameState {
   radioPosition: RadioPosition
   activePlayerId: string
   players: PlayerState[]
+  markets: Record<RadioPosition, MarketState>
 }
 
-export const createInitialGameState = (): GameState => ({
+interface CreateInitialGameStateParams {
+  refugioDeckCardIds?: string[]
+  yermoDeckCardIds?: string[]
+}
+
+export const createInitialGameState = ({
+  refugioDeckCardIds = [],
+  yermoDeckCardIds = [],
+}: CreateInitialGameStateParams = {}): GameState => ({
   phase: 'setup',
   turn: 1,
   radioPosition: 'refugio',
@@ -42,4 +52,14 @@ export const createInitialGameState = (): GameState => ({
       kind: 'ai',
     }),
   ],
+  markets: {
+    refugio: createInitialMarketState({
+      group: 'refugio',
+      deckCardIds: refugioDeckCardIds,
+    }),
+    yermo: createInitialMarketState({
+      group: 'yermo',
+      deckCardIds: yermoDeckCardIds,
+    }),
+  },
 })

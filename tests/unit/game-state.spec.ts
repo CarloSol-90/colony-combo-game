@@ -47,6 +47,40 @@ describe('createInitialGameState', () => {
           colony: [],
         },
       ],
+      markets: {
+        refugio: {
+          group: 'refugio',
+          visibleCardIds: [],
+          deckCardIds: [],
+        },
+        yermo: {
+          group: 'yermo',
+          visibleCardIds: [],
+          deckCardIds: [],
+        },
+      },
+    })
+  })
+
+  it('creates initial markets from deck card ids', () => {
+    expect(
+      createInitialGameState({
+        refugioDeckCardIds: ['refugio-1', 'refugio-2', 'refugio-3', 'refugio-4'],
+        yermoDeckCardIds: ['yermo-1', 'yermo-2', 'yermo-3', 'yermo-4'],
+      }),
+    ).toMatchObject({
+      markets: {
+        refugio: {
+          group: 'refugio',
+          visibleCardIds: ['refugio-1', 'refugio-2', 'refugio-3'],
+          deckCardIds: ['refugio-4'],
+        },
+        yermo: {
+          group: 'yermo',
+          visibleCardIds: ['yermo-1', 'yermo-2', 'yermo-3'],
+          deckCardIds: ['yermo-4'],
+        },
+      },
     })
   })
 })
