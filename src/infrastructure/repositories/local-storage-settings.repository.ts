@@ -4,7 +4,7 @@ import { LocalStorageAdapter } from '@/infrastructure/storage/local-storage-adap
 const SETTINGS_KEY = 'app-settings'
 
 const defaultSettings: AppSettings = {
-  locale: 'es',
+  locale: 'en',
   soundEnabled: true,
 }
 

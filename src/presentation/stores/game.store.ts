@@ -20,8 +20,8 @@ const saveGameStateUseCase = new SaveGameStateUseCase(gameStateRepository)
 interface GameStoreState {
   gameState: GameState | null
   cards: CardDefinition[]
-  refugioCards: CardDefinition[]
-  yermoCards: CardDefinition[]
+  shelterCards: CardDefinition[]
+  wastelandCards: CardDefinition[]
   locale: 'es' | 'en'
   isLoading: boolean
   error: string | null
@@ -31,8 +31,8 @@ export const useGameStore = defineStore('game', {
   state: (): GameStoreState => ({
     gameState: null,
     cards: [],
-    refugioCards: [],
-    yermoCards: [],
+    shelterCards: [],
+    wastelandCards: [],
     locale: 'es',
     isLoading: false,
     error: null,
@@ -44,18 +44,18 @@ export const useGameStore = defineStore('game', {
       this.error = null
 
       try {
-        const [gameState, cards, refugioCards, yermoCards, locale] = await Promise.all([
+        const [gameState, cards, shelterCards, wastelandCards, locale] = await Promise.all([
           loadGameStateUseCase.execute(),
           loadCardsUseCase.execute(),
-          loadCardsUseCase.execute('refugio'),
-          loadCardsUseCase.execute('yermo'),
+          loadCardsUseCase.execute('shelter'),
+          loadCardsUseCase.execute('wasteland'),
           loadLocaleUseCase.execute(),
         ])
 
         this.gameState = gameState
         this.cards = cards
-        this.refugioCards = refugioCards
-        this.yermoCards = yermoCards
+        this.shelterCards = shelterCards
+        this.wastelandCards = wastelandCards
         this.locale = locale
       } catch (error) {
         this.error = error instanceof Error ? error.message : 'Unknown game initialization error'

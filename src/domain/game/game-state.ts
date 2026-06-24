@@ -4,7 +4,7 @@ export { INITIAL_BATTERIES, INITIAL_CAPITAL } from './game-resources'
 
 export type GamePhase = 'setup' | 'turn' | 'finished'
 
-export type RadioPosition = 'refugio' | 'yermo'
+export type RadioPosition = 'shelter' | 'wasteland'
 
 export const HUMAN_PLAYER_ID = 'player-1'
 
@@ -18,17 +18,17 @@ export interface GameState {
 }
 
 interface CreateInitialGameStateParams {
-  refugioDeckCardIds?: string[]
-  yermoDeckCardIds?: string[]
+  shelterDeckCardIds?: string[]
+  wastelandDeckCardIds?: string[]
 }
 
 export const createInitialGameState = ({
-  refugioDeckCardIds = [],
-  yermoDeckCardIds = [],
+  shelterDeckCardIds = [],
+  wastelandDeckCardIds = [],
 }: CreateInitialGameStateParams = {}): GameState => ({
   phase: 'setup',
   turn: 1,
-  radioPosition: 'refugio',
+  radioPosition: 'shelter',
   activePlayerId: HUMAN_PLAYER_ID,
   players: [
     createInitialPlayerState({
@@ -53,13 +53,13 @@ export const createInitialGameState = ({
     }),
   ],
   markets: {
-    refugio: createInitialMarketState({
-      group: 'refugio',
-      deckCardIds: refugioDeckCardIds,
+    shelter: createInitialMarketState({
+      group: 'shelter',
+      deckCardIds: shelterDeckCardIds,
     }),
-    yermo: createInitialMarketState({
-      group: 'yermo',
-      deckCardIds: yermoDeckCardIds,
+    wasteland: createInitialMarketState({
+      group: 'wasteland',
+      deckCardIds: wastelandDeckCardIds,
     }),
   },
 })

@@ -1,0 +1,19 @@
+{
+  "app": {
+    "title": "Colony Combo",
+    "subtitle": "Colonia de supervivientes",
+    "intro": "La primera version prepara dominio, interfaz y traducciones sin acoplar la logica del juego a Vue.",
+    "enter": "Entrar a la colonia"
+  },
+  "resources": {
+    "capital": "Capital",
+    "batteries": "Baterias"
+  },
+  "markets": {
+    "shelter": "Refugio",
+    "wasteland": "Yermo"
+  },
+  "radio": {
+    "label": "Radio"
+  }
+}

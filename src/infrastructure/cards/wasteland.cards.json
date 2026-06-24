@@ -1,0 +1,14 @@
+[
+  {
+    "id": "wasteland-001",
+    "name": "Wasteland Scout",
+    "group": "wasteland",
+    "cost": 3,
+    "shields": ["exploration", "resources"],
+    "immediateAbility": "Look at the top card of the deck.",
+    "scoringRule": "1 point for each Exploration card in your colony.",
+    "radioMovement": "none",
+    "art": "https://example.com/art/wasteland/scout.png",
+    "rarity": "common"
+  }
+]
