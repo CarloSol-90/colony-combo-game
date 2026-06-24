@@ -1,8 +1,14 @@
-export type CardGroup = 'refugio' | 'yermo'
+export type CardGroup = 'shelter' | 'wasteland'
 
-export type ShieldType = 'comunidad' | 'exploracion' | 'recursos' | 'seguridad' | 'liderazgo' | 'oficios'
+export type ShieldType =
+  | 'community'
+  | 'exploration'
+  | 'resources'
+  | 'security'
+  | 'leadership'
+  | 'trades'
 
-export type RadioMovement = 'none' | 'to_refugio' | 'to_yermo'
+export type RadioMovement = 'none' | 'to_shelter' | 'to_wasteland'
 
 export interface CardDefinition {
   id: string

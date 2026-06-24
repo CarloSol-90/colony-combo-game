@@ -1,16 +1,16 @@
-import refugioCards from '@/infrastructure/cards/refugio.cards.json'
-import yermoCards from '@/infrastructure/cards/yermo.cards.json'
+import shelterCards from '@/infrastructure/cards/shelter.cards.json'
+import wastelandCards from '@/infrastructure/cards/wasteland.cards.json'
 import type { CardCatalogPort } from '@/application/persistence/card-catalog.port'
 import type { CardDefinition, CardGroup } from '@/domain/card/card-definition'
 
 const cardCatalog: Record<CardGroup, CardDefinition[]> = {
-  refugio: refugioCards as CardDefinition[],
-  yermo: yermoCards as CardDefinition[],
+  shelter: shelterCards as CardDefinition[],
+  wasteland: wastelandCards as CardDefinition[],
 }
 
 export class JsonCardCatalogRepository implements CardCatalogPort {
   async getAll(): Promise<CardDefinition[]> {
-    return [...cardCatalog.refugio, ...cardCatalog.yermo]
+    return [...cardCatalog.shelter, ...cardCatalog.wasteland]
   }
 
   async getByGroup(group: CardGroup): Promise<CardDefinition[]> {

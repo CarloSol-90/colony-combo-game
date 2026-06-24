@@ -1,0 +1,14 @@
+[
+  {
+    "id": "shelter-001",
+    "name": "Shelter Captain",
+    "group": "shelter",
+    "cost": 5,
+    "shields": ["leadership", "security"],
+    "immediateAbility": "Gain 2 Capital.",
+    "scoringRule": "1 point for each adjacent Leadership shield.",
+    "radioMovement": "to_wasteland",
+    "art": "https://example.com/art/shelter/captain.png",
+    "rarity": "rare"
+  }
+]

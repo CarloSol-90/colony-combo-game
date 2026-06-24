@@ -10,6 +10,6 @@ export class LoadLocaleUseCase {
   async execute(): Promise<AppSettings['locale']> {
     const settings = await this.settingsStore.load()
 
-    return settings?.locale ?? 'es'
+    return settings?.locale ?? 'en'
   }
 }

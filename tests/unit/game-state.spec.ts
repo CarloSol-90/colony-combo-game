@@ -11,7 +11,7 @@ describe('createInitialGameState', () => {
     expect(createInitialGameState()).toEqual({
       phase: 'setup',
       turn: 1,
-      radioPosition: 'refugio',
+      radioPosition: 'shelter',
       activePlayerId: HUMAN_PLAYER_ID,
       players: [
         {
@@ -48,13 +48,13 @@ describe('createInitialGameState', () => {
         },
       ],
       markets: {
-        refugio: {
-          group: 'refugio',
+        shelter: {
+          group: 'shelter',
           visibleCardIds: [],
           deckCardIds: [],
         },
-        yermo: {
-          group: 'yermo',
+        wasteland: {
+          group: 'wasteland',
           visibleCardIds: [],
           deckCardIds: [],
         },
@@ -65,20 +65,20 @@ describe('createInitialGameState', () => {
   it('creates initial markets from deck card ids', () => {
     expect(
       createInitialGameState({
-        refugioDeckCardIds: ['refugio-1', 'refugio-2', 'refugio-3', 'refugio-4'],
-        yermoDeckCardIds: ['yermo-1', 'yermo-2', 'yermo-3', 'yermo-4'],
+        shelterDeckCardIds: ['shelter-1', 'shelter-2', 'shelter-3', 'shelter-4'],
+        wastelandDeckCardIds: ['wasteland-1', 'wasteland-2', 'wasteland-3', 'wasteland-4'],
       }),
     ).toMatchObject({
       markets: {
-        refugio: {
-          group: 'refugio',
-          visibleCardIds: ['refugio-1', 'refugio-2', 'refugio-3'],
-          deckCardIds: ['refugio-4'],
+        shelter: {
+          group: 'shelter',
+          visibleCardIds: ['shelter-1', 'shelter-2', 'shelter-3'],
+          deckCardIds: ['shelter-4'],
         },
-        yermo: {
-          group: 'yermo',
-          visibleCardIds: ['yermo-1', 'yermo-2', 'yermo-3'],
-          deckCardIds: ['yermo-4'],
+        wasteland: {
+          group: 'wasteland',
+          visibleCardIds: ['wasteland-1', 'wasteland-2', 'wasteland-3'],
+          deckCardIds: ['wasteland-4'],
         },
       },
     })

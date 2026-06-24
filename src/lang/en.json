@@ -4,5 +4,16 @@
     "subtitle": "Survivor colony",
     "intro": "The first version sets up domain, UI, and translations without coupling game logic to Vue.",
     "enter": "Enter the colony"
+  },
+  "resources": {
+    "capital": "Capital",
+    "batteries": "Batteries"
+  },
+  "markets": {
+    "shelter": "Shelter",
+    "wasteland": "Wasteland"
+  },
+  "radio": {
+    "label": "Radio"
   }
 }

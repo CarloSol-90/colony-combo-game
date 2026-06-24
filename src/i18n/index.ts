@@ -1,5 +1,5 @@
-import es from './locales/es.json'
-import en from './locales/en.json'
+import en from '@/lang/en.json'
+import es from '@/lang/es.json'
 
 export const messages = {
   es,
