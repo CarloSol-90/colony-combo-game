@@ -1,5 +1,5 @@
 import type { PlacedColonyCard } from '@/domain/colony/colony-card'
-import { INITIAL_BATTERIES, INITIAL_CAPITAL } from '@/domain/game/game-state'
+import { INITIAL_BATTERIES, INITIAL_CAPITAL } from '@/domain/game/game-resources'
 
 export type PlayerKind = 'human' | 'ai'
 
