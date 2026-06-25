@@ -1,2 +1,4 @@
 export const INITIAL_SCRAP = 15
 export const INITIAL_BATTERIES = 2
+export const FACE_DOWN_CARD_SCRAP_REWARD = 6
+export const FACE_DOWN_CARD_BATTERY_REWARD = 2
