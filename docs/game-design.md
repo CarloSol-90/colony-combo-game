@@ -62,6 +62,16 @@ Cards keep this structure:
 
 Card text should use post-apocalyptic terminology and tone.
 
+## Card Cataloging Workflow
+
+The full card set is being cataloged from the 78 original Castle Combo cards before final Colony Combo adaptation.
+
+At this stage, original mechanics should be preserved exactly. Character names can be changed to avoid direct association, but zones, costs, shields, messenger movement, immediate actions, and end-game scoring should remain faithful to the source card.
+
+The final Colony Combo rewrite happens after the full set is reviewed.
+
+See `docs/card-cataloging.md`.
+
 ## Face-Down Cards
 
 When a player does not buy a card, they gain:

@@ -65,6 +65,20 @@ Example terminology:
 - `Gain 2 gold` becomes `Gain 2 scrap`.
 - `Discount 1 gold` becomes `Discount 1 scrap`.
 
+## Card Cataloging Phase
+
+Before adapting the full card set to Colony Combo, the project is cataloging the 78 original Castle Combo cards as source material.
+
+During this cataloging phase:
+
+- Register each original card accurately.
+- Rename each character to avoid a direct one-to-one relationship with Castle Combo.
+- Preserve the original zone, cost, shields, messenger movement, immediate action, and end-game scoring.
+- Do not transform mechanics to Colony Combo terminology yet.
+- Apply Colony Combo resources, icons, and thematic rewrites only after the full 78-card set has been reviewed.
+
+See [Card Cataloging](docs/card-cataloging.md) for the working schema and mapping rules.
+
 ## Face-Down Cards
 
 When a player does not buy a card, they gain:
