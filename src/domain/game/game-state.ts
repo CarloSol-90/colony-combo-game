@@ -1,6 +1,6 @@
 import { createInitialPlayerState, type PlayerState } from '@/domain/player/player-state'
 import { createInitialMarketState, type MarketState } from '@/domain/market/market-state'
-export { INITIAL_BATTERIES, INITIAL_CAPITAL } from './game-resources'
+export { INITIAL_BATTERIES, INITIAL_SCRAP } from './game-resources'
 
 export type GamePhase = 'setup' | 'turn' | 'finished'
 
