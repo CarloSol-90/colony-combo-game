@@ -24,12 +24,37 @@ describe('buyCard', () => {
       INITIAL_SCRAP - 5,
     )
     expect(result.state.pendingPlacementCardId).toBe('shelter-1')
-    expect(result.state.markets.shelter.visibleCardIds).toEqual(['shelter-2', 'shelter-3'])
+    expect(result.state.markets.shelter.visibleCardIds).toEqual([
+      'shelter-2',
+      'shelter-3',
+      'shelter-4',
+    ])
+    expect(result.state.markets.shelter.deckCardIds).toEqual([])
     expect(result.state.markets.wasteland.visibleCardIds).toEqual([
       'wasteland-1',
       'wasteland-2',
       'wasteland-3',
     ])
+  })
+
+  it('leaves the market partially filled when there are no deck cards to refill it', () => {
+    const state = createInitialGameState({
+      shelterDeckCardIds: ['shelter-1', 'shelter-2', 'shelter-3'],
+    })
+
+    const result = buyCard(state, {
+      id: 'shelter-1',
+      cost: 5,
+    })
+
+    expect(result.success).toBe(true)
+
+    if (!result.success) {
+      return
+    }
+
+    expect(result.state.markets.shelter.visibleCardIds).toEqual(['shelter-2', 'shelter-3'])
+    expect(result.state.markets.shelter.deckCardIds).toEqual([])
   })
 
   it('rejects a card that is not visible in the current market', () => {

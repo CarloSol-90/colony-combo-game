@@ -1,4 +1,5 @@
 import type { CardDefinition } from '@/domain/card/card-definition'
+import { refillMarket } from '@/domain/market/market-state'
 import type { GameState } from './game-state'
 
 export type BuyCardError =
@@ -42,6 +43,11 @@ export const buyCard = (state: GameState, card: Pick<CardDefinition, 'id' | 'cos
     }
   }
 
+  const marketAfterPurchase = {
+    ...currentMarket,
+    visibleCardIds: currentMarket.visibleCardIds.filter((cardId) => cardId !== card.id),
+  }
+
   return {
     success: true,
     state: {
@@ -57,10 +63,7 @@ export const buyCard = (state: GameState, card: Pick<CardDefinition, 'id' | 'cos
       ),
       markets: {
         ...state.markets,
-        [state.radioPosition]: {
-          ...currentMarket,
-          visibleCardIds: currentMarket.visibleCardIds.filter((cardId) => cardId !== card.id),
-        },
+        [state.radioPosition]: refillMarket(marketAfterPurchase),
       },
     },
   }
