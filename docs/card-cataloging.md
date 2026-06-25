@@ -13,6 +13,10 @@ This is a source-data phase, not a final Colony Combo mechanics phase.
 3. Preserve original zone, cost, shields, messenger movement, immediate action, and end-game scoring.
 4. After all 78 cards are reviewed, adapt theme, resources, icons, and final terminology to Colony Combo.
 
+The working source file is `data/cards-original.json`.
+
+Only cards explicitly reviewed and provided should be added. Do not invent the remaining entries.
+
 ## Important Rule
 
 Do not transform mechanics while cataloging.
@@ -43,23 +47,30 @@ export const cards = [
     id: "village_001",
     originalName: "Bandolero",
     newName: "Saqueador Errante",
-    originalZone: "village",
-    colonyZone: "wasteland",
+    zone: "village",
+    futureZone: "yermo",
     cost: 7,
-    costResource: "gold",
-    futureCostResource: "scrap",
-    shields: ["agriculture"],
-    messengerMove: null,
+    currentResource: "gold",
+    futureResource: "scrap",
+    printedShields: ["agriculture"],
+    messengerMove: {
+      moves: false,
+      to: null,
+    },
     instantEffect: {
       type: "gainKeysByNeighborBanner",
-      target: "castleBanner",
-      amount: 1,
-      neighborScope: "oneNeighbor",
+      params: {
+        target: "castleBanner",
+        amount: 1,
+        neighborScope: "oneNeighbor",
+      },
     },
-    endGameScoring: {
+    endGameEffect: {
       type: "pointsPerSet",
-      points: 7,
-      set: ["villageBanner", "villageBanner", "villageBanner"],
+      params: {
+        points: 7,
+        set: ["villageBanner", "villageBanner", "villageBanner"],
+      },
     },
     reviewed: true,
     notes: "Last Village card received.",
@@ -74,3 +85,5 @@ export const cards = [
 Its temporary Colony Combo character name is `Saqueador Errante`.
 
 Mechanically, it still belongs to the original Village source data and keeps the original gold cost, shield, immediate effect, and scoring structure until the full card set is reviewed.
+
+For review rules and the JSON schema, see `docs/cards-review.md`.

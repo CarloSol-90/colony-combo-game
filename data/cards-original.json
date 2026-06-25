@@ -1,0 +1,34 @@
+[
+  {
+    "id": "village_001",
+    "originalName": "Bandolero",
+    "newName": "Saqueador Errante",
+    "zone": "village",
+    "futureZone": "yermo",
+    "cost": 7,
+    "currentResource": "gold",
+    "futureResource": "scrap",
+    "printedShields": ["agriculture"],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeysByNeighborBanner",
+      "params": {
+        "target": "castleBanner",
+        "amount": 1,
+        "neighborScope": "oneNeighbor"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerSet",
+      "params": {
+        "points": 7,
+        "set": ["villageBanner", "villageBanner", "villageBanner"]
+      }
+    },
+    "reviewed": true,
+    "notes": "Last Village card received. Source mechanics are preserved for cataloging."
+  }
+]

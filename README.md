@@ -77,7 +77,7 @@ During this cataloging phase:
 - Do not transform mechanics to Colony Combo terminology yet.
 - Apply Colony Combo resources, icons, and thematic rewrites only after the full 78-card set has been reviewed.
 
-See [Card Cataloging](docs/card-cataloging.md) for the working schema and mapping rules.
+See [Card Cataloging](docs/card-cataloging.md) and [Cards Review](docs/cards-review.md) for the working schema and mapping rules.
 
 ## Face-Down Cards
 
