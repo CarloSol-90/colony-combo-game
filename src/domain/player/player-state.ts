@@ -1,5 +1,5 @@
 import type { PlacedColonyCard } from '@/domain/colony/colony-card'
-import { INITIAL_BATTERIES, INITIAL_CAPITAL } from '@/domain/game/game-resources'
+import { INITIAL_BATTERIES, INITIAL_SCRAP } from '@/domain/game/game-resources'
 
 export type PlayerKind = 'human' | 'ai'
 
@@ -7,7 +7,7 @@ export interface PlayerState {
   id: string
   name: string
   kind: PlayerKind
-  capital: number
+  scrap: number
   batteries: number
   colony: PlacedColonyCard[]
 }
@@ -26,7 +26,7 @@ export const createInitialPlayerState = ({
   id,
   name,
   kind,
-  capital: INITIAL_CAPITAL,
+  scrap: INITIAL_SCRAP,
   batteries: INITIAL_BATTERIES,
   colony: [],
 })

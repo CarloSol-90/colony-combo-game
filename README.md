@@ -4,7 +4,7 @@
 
 # Colony Combo
 
-Mobile-first digital board game about building a survivor colony in a hostile world. The project started with mechanical inspiration from Castle Combo, but the goal is to evolve it into its own game identity with a clean, testable architecture.
+Mobile-first digital board game about building a survivor colony in a hostile, post-apocalyptic world. The project started with mechanical inspiration from Castle Combo, but the goal is to evolve it into its own game identity: pixel art, relaxed dark humor, exaggerated cartoon survivors, improvised technology, and a tone inspired by Fallout, Caravan, Borderlands, and Castle Combo.
 
 ## Current Status
 
@@ -36,6 +36,60 @@ The architecture is split into clear layers:
 - Initial persistence uses LocalStorage, but the architecture must allow future migration to Laravel API, Supabase, SQLite, or another backend without changing the domain.
 - Code, IDs, and internal naming use English.
 - Spanish lives only in translation files.
+
+## Definitive Game Terminology
+
+Colony Combo uses its own post-apocalyptic vocabulary. These terms are the source of truth for documentation, UI copy, card text, and future mechanics:
+
+- **Scrap**: main resource, represented by a pixel-art gear icon. Scrap replaces gold terminology and is used to buy cards.
+- **Batteries**: secondary resource. Batteries replace keys and are used to activate effects, satisfy card requirements, and support secondary mechanics.
+- **Shelter**: equivalent zone to Castle. In Spanish UI copy this is `Refugio`.
+- **Wasteland**: equivalent zone to Village. In Spanish UI copy this is `Yermo`.
+- **Walkie-talkie**: replaces the messenger. Moving the messenger is now described as switching the walkie-talkie between zones.
+
+Gold terminology must not be used in Colony Combo except when explaining historical inspiration from Castle Combo.
+
+## Card Design
+
+Cards keep the inherited structure from Castle Combo while using Colony Combo terminology:
+
+- Scrap cost.
+- Faction.
+- Character.
+- Immediate action.
+- End-game scoring rule.
+
+Example terminology:
+
+- `Cost: 3 gold` becomes `Cost: 3 scrap`.
+- `Gain 2 gold` becomes `Gain 2 scrap`.
+- `Discount 1 gold` becomes `Discount 1 scrap`.
+
+## Face-Down Cards
+
+When a player does not buy a card, they gain:
+
+- 6 scrap.
+- 2 batteries.
+
+Then they place a Shelter or Wasteland card back face down in their 3x3 colony grid.
+
+Face-down cards count as valid cards. Some future cards may score from having face-down cards in the colony.
+
+## Future Mechanics
+
+The following mechanics are approved for the larger version of the game, once the card pool grows toward roughly 100 cards. They are documented here only; they are not part of the current implementation yet.
+
+- Radio cards.
+- Majorities.
+- Risk and reward.
+- Evolution cards.
+- Dual-category cards.
+- Permanent events.
+- Sacrifice cards.
+- Reactions.
+- Combo chains.
+- Exchange cards.
 
 ## Scripts
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { INITIAL_BATTERIES, INITIAL_CAPITAL } from '@/domain/game/game-state'
+import { INITIAL_BATTERIES, INITIAL_SCRAP } from '@/domain/game/game-state'
 import { createInitialPlayerState } from '@/domain/player/player-state'
 
 describe('createInitialPlayerState', () => {
@@ -14,7 +14,7 @@ describe('createInitialPlayerState', () => {
       id: 'player-1',
       name: 'Player',
       kind: 'human',
-      capital: INITIAL_CAPITAL,
+      scrap: INITIAL_SCRAP,
       batteries: INITIAL_BATTERIES,
       colony: [],
     })
@@ -31,7 +31,7 @@ describe('createInitialPlayerState', () => {
       id: 'rival-1',
       name: 'Rival 1',
       kind: 'ai',
-      capital: INITIAL_CAPITAL,
+      scrap: INITIAL_SCRAP,
       batteries: INITIAL_BATTERIES,
       colony: [],
     })
