@@ -15,6 +15,7 @@ export interface GameState {
   activePlayerId: string
   players: PlayerState[]
   markets: Record<RadioPosition, MarketState>
+  pendingPlacementCardId: string | null
 }
 
 interface CreateInitialGameStateParams {
@@ -30,6 +31,7 @@ export const createInitialGameState = ({
   turn: 1,
   radioPosition: 'shelter',
   activePlayerId: HUMAN_PLAYER_ID,
+  pendingPlacementCardId: null,
   players: [
     createInitialPlayerState({
       id: HUMAN_PLAYER_ID,
