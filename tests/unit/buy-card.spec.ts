@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buyCard } from '@/domain/game/buy-card'
-import { createInitialGameState, HUMAN_PLAYER_ID, INITIAL_CAPITAL } from '@/domain/game/game-state'
+import { createInitialGameState, HUMAN_PLAYER_ID, INITIAL_SCRAP } from '@/domain/game/game-state'
 
 describe('buyCard', () => {
   it('buys a visible card from the market where the radio is located', () => {
@@ -20,8 +20,8 @@ describe('buyCard', () => {
       return
     }
 
-    expect(result.state.players.find((player) => player.id === HUMAN_PLAYER_ID)?.capital).toBe(
-      INITIAL_CAPITAL - 5,
+    expect(result.state.players.find((player) => player.id === HUMAN_PLAYER_ID)?.scrap).toBe(
+      INITIAL_SCRAP - 5,
     )
     expect(result.state.markets.shelter.visibleCardIds).toEqual(['shelter-2', 'shelter-3'])
     expect(result.state.markets.wasteland.visibleCardIds).toEqual([
@@ -48,7 +48,7 @@ describe('buyCard', () => {
     })
   })
 
-  it('rejects a card when the active player does not have enough capital', () => {
+  it('rejects a card when the active player does not have enough scrap', () => {
     const state = createInitialGameState({
       shelterDeckCardIds: ['shelter-1', 'shelter-2', 'shelter-3'],
     })
@@ -56,11 +56,11 @@ describe('buyCard', () => {
     expect(
       buyCard(state, {
         id: 'shelter-1',
-        cost: INITIAL_CAPITAL + 1,
+        cost: INITIAL_SCRAP + 1,
       }),
     ).toEqual({
       success: false,
-      error: 'not_enough_capital',
+      error: 'not_enough_scrap',
     })
   })
 

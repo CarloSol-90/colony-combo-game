@@ -4,7 +4,7 @@ import type { GameState } from './game-state'
 export type BuyCardError =
   | 'active_player_not_found'
   | 'card_not_available_in_current_market'
-  | 'not_enough_capital'
+  | 'not_enough_scrap'
 
 export type BuyCardResult =
   | {
@@ -35,10 +35,10 @@ export const buyCard = (state: GameState, card: Pick<CardDefinition, 'id' | 'cos
     }
   }
 
-  if (activePlayer.capital < card.cost) {
+  if (activePlayer.scrap < card.cost) {
     return {
       success: false,
-      error: 'not_enough_capital',
+      error: 'not_enough_scrap',
     }
   }
 
@@ -50,7 +50,7 @@ export const buyCard = (state: GameState, card: Pick<CardDefinition, 'id' | 'cos
         player.id === state.activePlayerId
           ? {
               ...player,
-              capital: player.capital - card.cost,
+              scrap: player.scrap - card.cost,
             }
           : player,
       ),
