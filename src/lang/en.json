@@ -6,7 +6,7 @@
     "enter": "Enter the colony"
   },
   "resources": {
-    "capital": "Capital",
+    "scrap": "Scrap",
     "batteries": "Batteries"
   },
   "markets": {
@@ -14,6 +14,6 @@
     "wasteland": "Wasteland"
   },
   "radio": {
-    "label": "Radio"
+    "label": "Walkie-talkie"
   }
 }
