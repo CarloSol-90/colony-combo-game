@@ -23,6 +23,7 @@ describe('buyCard', () => {
     expect(result.state.players.find((player) => player.id === HUMAN_PLAYER_ID)?.scrap).toBe(
       INITIAL_SCRAP - 5,
     )
+    expect(result.state.pendingPlacementCardId).toBe('shelter-1')
     expect(result.state.markets.shelter.visibleCardIds).toEqual(['shelter-2', 'shelter-3'])
     expect(result.state.markets.wasteland.visibleCardIds).toEqual([
       'wasteland-1',

@@ -13,6 +13,7 @@ describe('createInitialGameState', () => {
       turn: 1,
       radioPosition: 'shelter',
       activePlayerId: HUMAN_PLAYER_ID,
+      pendingPlacementCardId: null,
       players: [
         {
           id: HUMAN_PLAYER_ID,

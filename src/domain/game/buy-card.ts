@@ -46,6 +46,7 @@ export const buyCard = (state: GameState, card: Pick<CardDefinition, 'id' | 'cos
     success: true,
     state: {
       ...state,
+      pendingPlacementCardId: card.id,
       players: state.players.map((player) =>
         player.id === state.activePlayerId
           ? {
