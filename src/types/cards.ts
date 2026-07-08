@@ -1,6 +1,6 @@
 export type CardZone = 'castle' | 'village'
 
-export type FutureZone = 'refugio' | 'yermo'
+export type ColonyZone = 'refuge' | 'wasteland'
 
 export type Shield =
   | 'military'
@@ -10,6 +10,7 @@ export type Shield =
   | 'nobility'
   | 'nature'
   | 'fortification'
+  | 'wealth'
 
 export interface MessengerMove {
   moves: boolean
@@ -24,16 +25,16 @@ export interface CardEffect {
 export interface OriginalCard {
   id: string
   originalName: string
-  newName: string
-  zone: CardZone
-  futureZone: FutureZone
+  colonyName: string
+  originalZone: CardZone
+  colonyZone: ColonyZone
   cost: number
-  currentResource: 'gold'
-  futureResource: 'scrap'
-  printedShields: Shield[]
+  futureCostResource: 'scrap'
+  shields: Shield[]
   messengerMove: MessengerMove
   instantEffect: CardEffect
   endGameEffect: CardEffect
+  storage: Record<string, unknown> | null
   reviewed: boolean
   notes: string
 }
