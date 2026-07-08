@@ -2,8 +2,12 @@ import { defineStore } from 'pinia'
 import { LoadCardsUseCase } from '@/application/cards'
 import { LoadGameStateUseCase, SaveGameStateUseCase } from '@/application/game'
 import { LoadLocaleUseCase } from '@/application/settings'
+import type { ColonyPosition } from '@/domain/colony/colony-position'
 import type { CardDefinition } from '@/domain/card/card-definition'
+import { buyCard } from '@/domain/game/buy-card'
 import type { GameState } from '@/domain/game/game-state'
+import { placeFaceDownCard } from '@/domain/game/place-face-down-card'
+import { placePendingCard } from '@/domain/game/place-pending-card'
 import { JsonCardCatalogRepository } from '@/infrastructure/repositories/json-card-catalog.repository'
 import { LocalStorageGameStateRepository } from '@/infrastructure/repositories/local-storage-game-state.repository'
 import { LocalStorageSettingsRepository } from '@/infrastructure/repositories/local-storage-settings.repository'
@@ -70,6 +74,71 @@ export const useGameStore = defineStore('game', {
       }
 
       await saveGameStateUseCase.execute(this.gameState)
+    },
+
+    async buyVisibleCard(cardId: string) {
+      if (!this.gameState) {
+        this.error = 'game_state_not_loaded'
+        return
+      }
+
+      const card = this.cards.find((currentCard) => currentCard.id === cardId)
+
+      if (!card) {
+        this.error = 'card_not_found'
+        return
+      }
+
+      const result = buyCard(this.gameState, card)
+
+      if (!result.success) {
+        this.error = result.error
+        return
+      }
+
+      this.error = null
+      this.gameState = result.state
+      await this.saveCurrentGame()
+    },
+
+    async placePendingCardAt(position: ColonyPosition) {
+      if (!this.gameState) {
+        this.error = 'game_state_not_loaded'
+        return
+      }
+
+      const result = placePendingCard(this.gameState, position)
+
+      if (!result.success) {
+        this.error = result.error
+        return
+      }
+
+      this.error = null
+      this.gameState = result.state
+      await this.saveCurrentGame()
+    },
+
+    async placeFaceDownCardAt(position: ColonyPosition) {
+      if (!this.gameState) {
+        this.error = 'game_state_not_loaded'
+        return
+      }
+
+      const result = placeFaceDownCard({
+        state: this.gameState,
+        position,
+        source: this.gameState.radioPosition,
+      })
+
+      if (!result.success) {
+        this.error = result.error
+        return
+      }
+
+      this.error = null
+      this.gameState = result.state
+      await this.saveCurrentGame()
     },
   },
 })

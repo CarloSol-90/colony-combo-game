@@ -1,34 +1,2969 @@
 [
   {
-    "id": "village_001",
-    "originalName": "Bandolero",
-    "newName": "Saqueador Errante",
-    "zone": "village",
-    "futureZone": "yermo",
-    "cost": 7,
-    "currentResource": "gold",
-    "futureResource": "scrap",
-    "printedShields": ["agriculture"],
+    "id": "C-001",
+    "originalName": "Tesorero",
+    "colonyName": "Contable del Búnker",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility"
+    ],
     "messengerMove": {
       "moves": false,
       "to": null
     },
     "instantEffect": {
-      "type": "gainKeysByNeighborBanner",
+      "type": "addScrapToEachScrapBagCard",
       "params": {
-        "target": "castleBanner",
-        "amount": 1,
-        "neighborScope": "oneNeighbor"
+        "amount": 2
       }
     },
     "endGameEffect": {
-      "type": "pointsPerSet",
+      "type": "pointsPerStoredScrap",
       "params": {
-        "points": 7,
-        "set": ["villageBanner", "villageBanner", "villageBanner"]
+        "pointsPerScrap": 2,
+        "capacity": 3
       }
     },
+    "storage": {
+      "type": "scrapBag",
+      "capacity": 3
+    },
     "reviewed": true,
-    "notes": "Last Village card received. Source mechanics are preserved for cataloging."
+    "notes": ""
+  },
+  {
+    "id": "C-002",
+    "originalName": "Gobernadora",
+    "colonyName": "Gobernadora del Refugio",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility",
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "castle"
+        ],
+        "amount": 1
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerDifferentCardInSameRow",
+      "params": {
+        "points": 2
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-003",
+    "originalName": "Monja",
+    "colonyName": "Hermana Antirradiación",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "gainScrapPerZoneCard",
+      "params": {
+        "zone": "castle",
+        "amount": 1
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameColumn",
+      "params": {
+        "shield": "religion",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-004",
+    "originalName": "Barón",
+    "colonyName": "Barón del Hormigón",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "castle",
+          "village"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfNoShield",
+      "params": {
+        "shield": "agriculture",
+        "points": 10
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-005",
+    "originalName": "Bufón",
+    "colonyName": "Payaso de la Sirena",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "gainScrapPerShield",
+      "params": {
+        "shield": "nobility",
+        "amount": 2,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRowOrColumn",
+      "params": {
+        "shield": "nobility",
+        "points": 2,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-006",
+    "originalName": "Princesa",
+    "colonyName": "Princesa del Bidón",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "castle"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRow",
+      "params": {
+        "shield": "nobility",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-007",
+    "originalName": "Boticaria",
+    "colonyName": "Boticaria de Mutantes",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "castle"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameColumn",
+      "params": {
+        "shield": "nature",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-008",
+    "originalName": "Reina Madre",
+    "colonyName": "Matriarca del Refugio",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility",
+      "nobility"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "addScrapToEachScrapBagCard",
+      "params": {
+        "amount": 2
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "pointsPerScrap": 2,
+        "capacity": 5
+      }
+    },
+    "storage": {
+      "type": "scrapBag",
+      "capacity": 5
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-009",
+    "originalName": "Profesor",
+    "colonyName": "Profesor Chispa",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "gainScrapPerDifferentShieldType",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "maxDifferentShields": 6,
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRow",
+      "params": {
+        "shield": "nature",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-010",
+    "originalName": "Orfebre",
+    "colonyName": "Joyero de Chatarra",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature",
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerDoubleShieldCard",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "column": 1,
+        "points": 6
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-011",
+    "originalName": "Sepulturero",
+    "colonyName": "Enterrador del Yermo",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion",
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discardMarketCardGainScrap",
+      "params": {
+        "market": "village",
+        "gain": "discardedCardCost"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "pointsPerScrap": 2,
+        "capacity": 8
+      }
+    },
+    "storage": {
+      "type": "scrapBag",
+      "capacity": 8
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-012",
+    "originalName": "Guardia Real",
+    "colonyName": "Guardia de la Esclusa",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military",
+      "nobility"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "allPlayersGainKeys",
+      "params": {
+        "amount": 1
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameColumn",
+      "params": {
+        "shield": "nobility",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-013",
+    "originalName": "Cardenal",
+    "colonyName": "Cardenal del Polvo",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeysPerZoneCard",
+      "params": {
+        "zone": "castle",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRow",
+      "params": {
+        "shield": "religion",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": {
+      "enabled": false,
+      "type": null,
+      "capacity": 0
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-014",
+    "originalName": "Escriba",
+    "colonyName": "Cronista Oxidado",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "gainScrapPerShield",
+      "params": {
+        "shield": "religion",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRowOrColumn",
+      "params": {
+        "shield": "nature",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-015",
+    "originalName": "Juez",
+    "colonyName": "Juez del Búnker",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "gainKeys",
+      "params": {
+        "amount": 2
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerZonePair",
+      "params": {
+        "zones": [
+          "castle",
+          "village"
+        ],
+        "points": 3
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": "Puntúa 3 PV por cada grupo/pareja formada por 1 carta de Castillo y 1 carta de Villa."
+  },
+  {
+    "id": "C-016",
+    "originalName": "Devoto",
+    "colonyName": "Devoto del Reactor",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerEmptySpace",
+      "params": {
+        "amount": 1
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfNoShield",
+      "params": {
+        "shield": "craft",
+        "points": 10
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-017",
+    "originalName": "Arquitecta",
+    "colonyName": "Arquitecta de Barricadas",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "village"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerDifferentShieldType",
+      "params": {
+        "points": 2
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-018",
+    "originalName": "Prestamista",
+    "colonyName": "Prestamista de Vales",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "gainScrapPerCardCost",
+      "params": {
+        "cost": 4,
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerCardCost",
+      "params": {
+        "cost": 4,
+        "points": 3,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-019",
+    "originalName": "Astrónomo",
+    "colonyName": "Astrónomo del Cielo Roto",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature",
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "castle"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "column": 1,
+        "points": 8
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-020",
+    "originalName": "Templario",
+    "colonyName": "Templario de la Chatarra",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion",
+      "military"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "multipleEffects",
+      "effects": [
+        {
+          "type": "gainScrapPerNeighborShield",
+          "params": {
+            "shield": "religion",
+            "amount": 1,
+            "neighbor": "leftOrRight"
+          }
+        },
+        {
+          "type": "gainKeysPerShield",
+          "params": {
+            "shield": "military",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerKeys",
+      "params": {
+        "points": 1
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-021",
+    "originalName": "Oficial",
+    "colonyName": "Oficial de Patrulla",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "multipleEffects",
+      "effects": [
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "nobility",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        },
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "military",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldPair",
+      "params": {
+        "shields": [
+          "nobility",
+          "military"
+        ],
+        "points": 4
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-022",
+    "originalName": "Maestro de Gremio",
+    "colonyName": "Capataz del Taller",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft",
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "discardMarketCardGainKeys",
+      "params": {
+        "market": "village",
+        "gain": "discardedCardCost"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "row": 3,
+        "points": 5
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-023",
+    "originalName": "Capitán",
+    "colonyName": "Capitán del Blindado",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military",
+      "military"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "village"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "column": 3,
+        "points": 8
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-024",
+    "originalName": "Madre Superiora",
+    "colonyName": "Madre del Refugio",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion",
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeys",
+      "params": {
+        "amount": 4
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "row": 1,
+        "points": 5
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-025",
+    "originalName": "Caballero",
+    "colonyName": "Jinete del Asfalto",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerZoneCard",
+      "params": {
+        "zone": "castle",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRowOrColumn",
+      "params": {
+        "shield": "nobility",
+        "points": 3,
+        "includeSelf": false
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-026",
+    "originalName": "Duquesa",
+    "colonyName": "Duquesa del Domo",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility",
+      "nobility"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeys",
+      "params": {
+        "amount": 2
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "row": 1,
+        "points": 8
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-027",
+    "originalName": "Soplador de Vidrio",
+    "colonyName": "Soplador de Neón",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "multipleEffects",
+      "effects": [
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "religion",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        },
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "craft",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldPair",
+      "params": {
+        "shields": [
+          "religion",
+          "craft"
+        ],
+        "points": 4
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-028",
+    "originalName": "Capellán",
+    "colonyName": "Capellán del Reactor",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "gainScrapPerSingleShieldCard",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerZoneCard",
+      "params": {
+        "zone": "village",
+        "points": 2,
+        "scope": "ownBoard"
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-029",
+    "originalName": "Su Majestad",
+    "colonyName": "Rey del Búnker",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 6,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility",
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "opponentsGainScrap",
+      "params": {
+        "amount": 1
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameColumn",
+      "params": {
+        "shield": "nobility",
+        "points": 4,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-030",
+    "originalName": "Vigía",
+    "colonyName": "Vigía de la Torre",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 6,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeysPerShield",
+      "params": {
+        "shield": "military",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerDifferentShieldInSameColumn",
+      "params": {
+        "points": 4,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-031",
+    "originalName": "Peregrino",
+    "colonyName": "Peregrino del Yermo",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 6,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "village"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerDifferentShieldInSameRow",
+      "params": {
+        "points": 4,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-032",
+    "originalName": "Alquimista",
+    "colonyName": "Químico del Barril",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 6,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "village",
+          "castle"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerDiscountCard",
+      "params": {
+        "points": 4,
+        "scope": "ownBoard"
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-033",
+    "originalName": "Príncipe",
+    "colonyName": "Príncipe de la Lata",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 6,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerShield",
+      "params": {
+        "shield": "nobility",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRow",
+      "params": {
+        "shield": "nobility",
+        "points": 4,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-034",
+    "originalName": "Canciller",
+    "colonyName": "Canciller del Domo",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 6,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility",
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeysPerShield",
+      "params": {
+        "shield": "nature",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerZoneCard",
+      "params": {
+        "zone": "castle",
+        "points": 2,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-035",
+    "originalName": "Su Majestad la Reina",
+    "colonyName": "Reina del Refugio",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 7,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeysPerShield",
+      "params": {
+        "shield": "nobility",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldSet",
+      "params": {
+        "shields": [
+          "nobility",
+          "nature",
+          "craft"
+        ],
+        "points": 10
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-036",
+    "originalName": "Banquera",
+    "colonyName": "Banquera de Chatarra",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 7,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "village"
+    },
+    "instantEffect": {
+      "type": "chooseOne",
+      "options": [
+        {
+          "type": "addScrapToAllStorageCards",
+          "params": {
+            "amount": 2
+          }
+        },
+        {
+          "type": "gainKeys",
+          "params": {
+            "amount": 3
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 1,
+        "scope": "allStorageCards"
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-037",
+    "originalName": "General",
+    "colonyName": "General Antipolvo",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 7,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeysPerDifferentShieldType",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "maxDifferentShields": 6,
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerThreeSameShieldsGroup",
+      "params": {
+        "points": 6,
+        "scope": "ownBoard"
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "C-038",
+    "originalName": "Mecenas",
+    "colonyName": "Patrocinador del Taller",
+    "originalZone": "castle",
+    "colonyZone": "refuge",
+    "cost": 7,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "opponentsGainScrap",
+      "params": {
+        "amount": 2
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerCardMinCost",
+      "params": {
+        "minimumCost": 5,
+        "points": 5,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-001",
+    "originalName": "Verdugo",
+    "colonyName": "Ejecutora del Yermo",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "discardMarketCardGainScrap",
+      "params": {
+        "market": "castle",
+        "gain": "discardedCardCost"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerZoneCard",
+      "params": {
+        "zone": "castle",
+        "points": 1,
+        "scope": "ownBoard",
+        "includeSelf": false
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-002",
+    "originalName": "Leñador",
+    "colonyName": "Talador de Escombros",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerCard",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "column": 3,
+        "points": 5
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-003",
+    "originalName": "Panadera",
+    "colonyName": "Panadera de Hongos",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "multipleEffects",
+      "effects": [
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "wealth",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        },
+        {
+          "type": "gainKeysPerZoneCard",
+          "params": {
+            "zone": "village",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsIfPositionInAny",
+      "params": {
+        "positions": [
+          {
+            "row": 1,
+            "column": 2
+          },
+          {
+            "row": 2,
+            "column": 1
+          },
+          {
+            "row": 2,
+            "column": 3
+          },
+          {
+            "row": 3,
+            "column": 2
+          }
+        ],
+        "points": 3
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": "Puntúa si está en una posición lateral central del tablero 3x3."
+  },
+  {
+    "id": "V-004",
+    "originalName": "Escudero",
+    "colonyName": "Escudero con Tapa",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "village",
+          "castle"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRowOrColumn",
+      "params": {
+        "shield": "craft",
+        "points": 2,
+        "includeSelf": false
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-005",
+    "originalName": "Carpintero",
+    "colonyName": "Carpintero de Palés",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerMissingShieldType",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "maxDifferentShields": 6
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfHasBacksideCard",
+      "params": {
+        "points": 8,
+        "scope": "ownBoard"
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": "Puntúa si tienes al menos una carta colocada por el reverso. Colocar una carta por el reverso generaba 6 de chatarra y 2 llaves."
+  },
+  {
+    "id": "V-006",
+    "originalName": "Mercader de Especias",
+    "colonyName": "Mercader de Polvos Raros",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerShield",
+      "params": {
+        "shield": "craft",
+        "amount": 2,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "row": 2,
+        "points": 5
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-007",
+    "originalName": "Vicario",
+    "colonyName": "Vicario del Bidón",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainScrapPerZoneCard",
+      "params": {
+        "zone": "village",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 2,
+        "scope": "self"
+      }
+    },
+    "storage": {
+      "resource": "scrap",
+      "max": 5
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-008",
+    "originalName": "Posadero",
+    "colonyName": "Posadero de Caravana",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "multipleEffects",
+      "effects": [
+        {
+          "type": "addScrapToAllStorageCards",
+          "params": {
+            "amount": 2
+          }
+        },
+        {
+          "type": "opponentsGainScrap",
+          "params": {
+            "amount": 2
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 2,
+        "scope": "self"
+      }
+    },
+    "storage": {
+      "resource": "scrap",
+      "max": 6
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-009",
+    "originalName": "Mendiga",
+    "colonyName": "Buscadora de Migas",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerOccupiedSpace",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRowOrColumn",
+      "params": {
+        "shield": "religion",
+        "points": 2,
+        "includeSelf": false
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-010",
+    "originalName": "Campesina",
+    "colonyName": "Cultivadora de Setas",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "village"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 2,
+        "scope": "self"
+      }
+    },
+    "storage": {
+      "resource": "scrap",
+      "max": 5
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-011",
+    "originalName": "Viajera",
+    "colonyName": "Caminante del Polvo",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 0,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerCardCost",
+      "params": {
+        "cost": 0,
+        "amount": 3,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerCardCost",
+      "params": {
+        "cost": 0,
+        "points": 2,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-012",
+    "originalName": "Filósofa",
+    "colonyName": "Filósofa del Chatarral",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "castle"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfNoShield",
+      "params": {
+        "shield": "military",
+        "points": 10
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-013",
+    "originalName": "Enfermo Curado Milagrosamente",
+    "colonyName": "Curado del Reactor",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion",
+      "religion"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerStorageCard",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 2,
+        "scope": "self"
+      }
+    },
+    "storage": {
+      "resource": "scrap",
+      "max": 4
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-014",
+    "originalName": "Apicultor",
+    "colonyName": "Criador de Zumbidos",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "addScrapToAllStorageCards",
+      "params": {
+        "amount": 2
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 2,
+        "scope": "self"
+      }
+    },
+    "storage": {
+      "resource": "scrap",
+      "max": 9
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-015",
+    "originalName": "Pescador",
+    "colonyName": "Pescador de Charcos",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth",
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "castle"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPositionInAny",
+      "params": {
+        "positions": [
+          {
+            "row": 1,
+            "column": 1
+          },
+          {
+            "row": 1,
+            "column": 3
+          },
+          {
+            "row": 3,
+            "column": 1
+          },
+          {
+            "row": 3,
+            "column": 3
+          }
+        ],
+        "points": 4
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-016",
+    "originalName": "Artillero",
+    "colonyName": "Artillero de Tubo",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "chooseOne",
+      "options": [
+        {
+          "type": "gainScrapPerNeighborShield",
+          "params": {
+            "shield": "craft",
+            "amount": 1,
+            "neighbor": "leftOrRight"
+          }
+        },
+        {
+          "type": "gainKeys",
+          "params": {
+            "amount": 2
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameColumn",
+      "params": {
+        "shield": "military",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-017",
+    "originalName": "Bárbaro",
+    "colonyName": "Bárbaro del Guardarraíl",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "chooseOne",
+      "options": [
+        {
+          "type": "gainScrapPerNeighborShield",
+          "params": {
+            "shield": "nature",
+            "amount": 1,
+            "neighbor": "leftOrRight"
+          }
+        },
+        {
+          "type": "gainKeys",
+          "params": {
+            "amount": 2
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsIfNoShield",
+      "params": {
+        "shield": "nature",
+        "points": 10
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-018",
+    "originalName": "Maestra de Armas",
+    "colonyName": "Instructora de Pinchos",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military",
+      "military"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerShield",
+      "params": {
+        "shield": "military",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 2,
+        "scope": "self"
+      }
+    },
+    "storage": {
+      "resource": "scrap",
+      "max": 4
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-019",
+    "originalName": "Viticultor",
+    "colonyName": "Fermentador del Yermo",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature",
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerZoneCard",
+      "params": {
+        "zone": "village",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerDifferentShieldInSameColumn",
+      "params": {
+        "points": 2,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-020",
+    "originalName": "Miliciano",
+    "colonyName": "Miliciano de Lata",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "chooseOne",
+      "options": [
+        {
+          "type": "gainScrapPerNeighborShield",
+          "params": {
+            "shield": "wealth",
+            "amount": 1,
+            "neighbor": "leftOrRight"
+          }
+        },
+        {
+          "type": "gainKeys",
+          "params": {
+            "amount": 2
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRow",
+      "params": {
+        "shield": "military",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-021",
+    "originalName": "Alfarero",
+    "colonyName": "Ceramista de Barro Tóxico",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft",
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "addScrapToAllStorageCards",
+      "params": {
+        "amount": 2
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 2,
+        "scope": "self"
+      }
+    },
+    "storage": {
+      "resource": "scrap",
+      "max": 4
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-022",
+    "originalName": "Inventor",
+    "colonyName": "Inventor de Trastos",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature",
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerShield",
+      "params": {
+        "shield": "nature",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerZoneCard",
+      "params": {
+        "zone": "village",
+        "points": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-023",
+    "originalName": "Inventor",
+    "colonyName": "Inventora de Emergencias",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 2,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature",
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerShield",
+      "params": {
+        "shield": "nature",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerZoneCard",
+      "params": {
+        "zone": "village",
+        "points": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": "Source entry was duplicated as V-022; kept as V-023 pending original-card verification."
+  },
+  {
+    "id": "V-024",
+    "originalName": "Escultora",
+    "colonyName": "Escultora de Chatarra",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion",
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerShield",
+      "params": {
+        "shield": "religion",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerStoredScrap",
+      "params": {
+        "points": 2,
+        "scope": "self"
+      }
+    },
+    "storage": {
+      "resource": "scrap",
+      "max": 7
+    },
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-025",
+    "originalName": "Armera",
+    "colonyName": "Armera de Tubos",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "village",
+          "castle"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerZoneShieldInSameRowOrColumn",
+      "params": {
+        "shield": "military",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-026",
+    "originalName": "Cantero",
+    "colonyName": "Picapedrero del Hormigón",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 3,
+    "futureCostResource": "scrap",
+    "shields": [
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "discountFutureCards",
+      "params": {
+        "zones": [
+          "village"
+        ],
+        "amount": 1,
+        "starts": "nextTurn"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameColumn",
+      "params": {
+        "shield": "craft",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-027",
+    "originalName": "Cerrajero",
+    "colonyName": "Cerrajero de Búnkeres",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth",
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerShield",
+      "params": {
+        "shield": "craft",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerKeys",
+      "params": {
+        "points": 1
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-028",
+    "originalName": "Bruja",
+    "colonyName": "Bruja del Mutágeno",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "multipleEffects",
+      "effects": [
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "wealth",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        },
+        {
+          "type": "gainKeysPerNeighborShield",
+          "params": {
+            "shield": "religion",
+            "amount": 1,
+            "neighbor": "leftOrRight"
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsIfNoShield",
+      "params": {
+        "shield": "religion",
+        "points": 9
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-029",
+    "originalName": "Espía",
+    "colonyName": "Espía de Caravana",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature",
+      "military"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "multipleEffects",
+      "effects": [
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "nature",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        },
+        {
+          "type": "gainKeysPerNeighborShield",
+          "params": {
+            "shield": "military",
+            "amount": 1,
+            "neighbor": "leftOrRight"
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "column": 2,
+        "points": 6
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-030",
+    "originalName": "Revolucionaria",
+    "colonyName": "Agitadora del Yermo",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerZoneCard",
+      "params": {
+        "zone": "village",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfNoShield",
+      "params": {
+        "shield": "nobility",
+        "points": 9
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-031",
+    "originalName": "Monje",
+    "colonyName": "Monje del Silencio Radio",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "religion",
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerShield",
+      "params": {
+        "shield": "religion",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRowOrColumn",
+      "params": {
+        "shield": "wealth",
+        "points": 2,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-032",
+    "originalName": "Mozo de Cuadra",
+    "colonyName": "Mozo del Garaje",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 4,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nobility",
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeysPerShield",
+      "params": {
+        "shield": "nobility",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameColumn",
+      "params": {
+        "shield": "wealth",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-033",
+    "originalName": "Herrera",
+    "colonyName": "Forjadora de Chatarra",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military",
+      "craft"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "chooseOne",
+      "options": [
+        {
+          "type": "gainScrapPerNeighborShield",
+          "params": {
+            "shield": "nobility",
+            "amount": 1,
+            "neighbor": "leftOrRight"
+          }
+        },
+        {
+          "type": "gainKeys",
+          "params": {
+            "amount": 2
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerTwoShieldCard",
+      "params": {
+        "points": 2,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-034",
+    "originalName": "Pastora",
+    "colonyName": "Pastora de Mutantes",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainScrapPerEmptySpace",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard"
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldInSameRow",
+      "params": {
+        "shield": "wealth",
+        "points": 3,
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-035",
+    "originalName": "Granjera",
+    "colonyName": "Granjera Hidropónica",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth",
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerShield",
+      "params": {
+        "shield": "wealth",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsIfPosition",
+      "params": {
+        "row": 3,
+        "points": 7
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-036",
+    "originalName": "Médico",
+    "colonyName": "Médico de Campaña",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "nature"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "multipleEffects",
+      "effects": [
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "nature",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        },
+        {
+          "type": "gainScrapPerShield",
+          "params": {
+            "shield": "wealth",
+            "amount": 1,
+            "scope": "ownBoard",
+            "includeSelf": true
+          }
+        }
+      ]
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldPair",
+      "params": {
+        "shields": [
+          "nature",
+          "wealth"
+        ],
+        "points": 4
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-037",
+    "originalName": "Usurpador",
+    "colonyName": "Okupa del Búnker",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 5,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": true,
+      "to": "castle"
+    },
+    "instantEffect": {
+      "type": "gainKeysPerSingleShieldCard",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerZoneCard",
+      "params": {
+        "zone": "castle",
+        "points": 2,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-038",
+    "originalName": "Mercenaria",
+    "colonyName": "Mercenaria del Polvo",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 6,
+    "futureCostResource": "scrap",
+    "shields": [
+      "military",
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainScrapPerDifferentShieldType",
+      "params": {
+        "amount": 1,
+        "scope": "ownBoard",
+        "maxDifferentShields": 6,
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerShieldSet",
+      "params": {
+        "shields": [
+          "religion",
+          "military",
+          "wealth"
+        ],
+        "points": 7
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
+  },
+  {
+    "id": "V-039",
+    "originalName": "Bandolero",
+    "colonyName": "Saqueador Errante",
+    "originalZone": "village",
+    "colonyZone": "wasteland",
+    "cost": 7,
+    "futureCostResource": "scrap",
+    "shields": [
+      "wealth"
+    ],
+    "messengerMove": {
+      "moves": false,
+      "to": null
+    },
+    "instantEffect": {
+      "type": "gainKeysPerZoneCard",
+      "params": {
+        "zone": "castle",
+        "amount": 1,
+        "scope": "ownBoard",
+        "includeSelf": true
+      }
+    },
+    "endGameEffect": {
+      "type": "pointsPerCardGroup",
+      "params": {
+        "zone": "village",
+        "groupSize": 3,
+        "points": 7
+      }
+    },
+    "storage": null,
+    "reviewed": true,
+    "notes": ""
   }
 ]

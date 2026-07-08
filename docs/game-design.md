@@ -12,11 +12,11 @@ Scrap is the main resource.
 
 - Icon: pixel-art gear.
 - Function: buy cards.
-- Mechanical role: same role gold had in Castle Combo.
+- Mechanical role: main purchase resource.
 
 Use `scrap` in English documentation and `chatarra` in Spanish UI copy.
 
-Do not use gold terminology except when explaining Castle Combo inspiration.
+Do not use previous purchase-resource terminology in Colony Combo data, UI copy, or card text.
 
 ### Batteries
 

@@ -9,16 +9,16 @@ At the moment, only reviewed cards that have been explicitly provided should be 
 ## Field Meaning
 
 - `originalName`: kept only as temporary internal reference to the original Castle Combo card.
-- `newName`: the working Colony Combo character name.
-- `zone`: original Castle Combo zone. Allowed values are `castle` and `village`.
-- `futureZone`: future Colony Combo zone. `castle` maps to `refugio`; `village` maps to `yermo`.
+- `colonyName`: the working Colony Combo character name. It can stay empty until the naming review phase.
+- `originalZone`: original Castle Combo zone. Allowed values are `castle` and `village`.
+- `colonyZone`: future Colony Combo zone. `castle` maps to `refuge`; `village` maps to `wasteland`.
 - `cost`: original printed cost.
-- `currentResource`: original resource. During cataloging this remains `gold`.
-- `futureResource`: future Colony Combo resource. This is `scrap`.
-- `printedShields`: original printed shields.
+- `futureCostResource`: Colony Combo purchase resource. This is always `scrap`.
+- `shields`: original printed shields.
 - `messengerMove`: original messenger movement as structured data.
 - `instantEffect`: original immediate effect as structured data.
 - `endGameEffect`: original final scoring effect as structured data.
+- `storage`: optional storage metadata for cards that store resources. Use `null` when the card does not store anything.
 - `reviewed`: whether the card entry has been checked.
 - `notes`: uncertainty, source comments, or review notes.
 
@@ -32,9 +32,8 @@ At the moment, only reviewed cards that have been explicitly provided should be 
 
 ## Future Equivalences
 
-- Gold -> Scrap.
 - Keys -> Batteries.
-- Castle -> Shelter.
+- Castle -> Refuge.
 - Village -> Wasteland.
 - Messenger -> Walkie-talkie.
 
@@ -42,22 +41,21 @@ Spanish UI terminology:
 
 - Scrap -> Chatarra.
 - Batteries -> Baterias.
-- Shelter -> Refugio.
+- Refuge -> Refugio.
 - Wasteland -> Yermo.
 
 ## Schema
 
 ```json
 {
-  "id": "village_001",
-  "originalName": "Bandolero",
-  "newName": "Saqueador Errante",
-  "zone": "village",
-  "futureZone": "yermo",
-  "cost": 7,
-  "currentResource": "gold",
-  "futureResource": "scrap",
-  "printedShields": ["agriculture"],
+  "id": "V-001",
+  "originalName": "",
+  "colonyName": "",
+  "originalZone": "village",
+  "colonyZone": "wasteland",
+  "cost": 0,
+  "futureCostResource": "scrap",
+  "shields": [],
   "messengerMove": {
     "moves": false,
     "to": null
@@ -71,13 +69,11 @@ Spanish UI terminology:
     }
   },
   "endGameEffect": {
-    "type": "pointsPerSet",
-    "params": {
-      "points": 7,
-      "set": ["villageBanner", "villageBanner", "villageBanner"]
-    }
+    "type": "",
+    "params": {}
   },
+  "storage": null,
   "reviewed": true,
-  "notes": "Last Village card received. Source mechanics are preserved for cataloging."
+  "notes": ""
 }
 ```

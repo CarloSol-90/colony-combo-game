@@ -41,13 +41,13 @@ The architecture is split into clear layers:
 
 Colony Combo uses its own post-apocalyptic vocabulary. These terms are the source of truth for documentation, UI copy, card text, and future mechanics:
 
-- **Scrap**: main resource, represented by a pixel-art gear icon. Scrap replaces gold terminology and is used to buy cards.
+- **Scrap**: main resource, represented by a pixel-art gear icon. Scrap is used to buy cards.
 - **Batteries**: secondary resource. Batteries replace keys and are used to activate effects, satisfy card requirements, and support secondary mechanics.
 - **Shelter**: equivalent zone to Castle. In Spanish UI copy this is `Refugio`.
 - **Wasteland**: equivalent zone to Village. In Spanish UI copy this is `Yermo`.
 - **Walkie-talkie**: replaces the messenger. Moving the messenger is now described as switching the walkie-talkie between zones.
 
-Gold terminology must not be used in Colony Combo except when explaining historical inspiration from Castle Combo.
+Previous purchase-resource terminology must not be used in Colony Combo data, UI copy, or card text.
 
 ## Card Design
 
@@ -61,9 +61,9 @@ Cards keep the inherited structure from Castle Combo while using Colony Combo te
 
 Example terminology:
 
-- `Cost: 3 gold` becomes `Cost: 3 scrap`.
-- `Gain 2 gold` becomes `Gain 2 scrap`.
-- `Discount 1 gold` becomes `Discount 1 scrap`.
+- `Cost: 3 scrap`.
+- `Gain 2 scrap`.
+- `Discount 1 scrap`.
 
 ## Card Cataloging Phase
 
