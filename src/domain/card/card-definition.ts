@@ -19,6 +19,6 @@ export interface CardDefinition {
   immediateAbility: string
   scoringRule: string
   radioMovement: RadioMovement
-  art: string
+  imageUrl: string
   rarity: 'common' | 'uncommon' | 'rare'
 }

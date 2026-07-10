@@ -7,13 +7,59 @@
   },
   "resources": {
     "scrap": "Chatarra",
-    "batteries": "Baterias"
+    "scrapShort": "chat.",
+    "batteries": "Baterias",
+    "batteriesShort": "bat."
   },
   "markets": {
     "shelter": "Refugio",
     "wasteland": "Yermo"
   },
   "radio": {
-    "label": "Radio"
+    "label": "Walkie-talkie",
+    "active": "Senal",
+    "inactive": "Silencio"
+  },
+  "turn": {
+    "label": "Turno"
+  },
+  "game": {
+    "loading": "Cargando sistemas de la colonia...",
+    "pendingCard": "Coloca esta carta",
+    "unavailable": "El estado de la partida no esta disponible."
+  },
+  "market": {
+    "empty": "No hay cartas reveladas",
+    "availableCard": "Carta disponible",
+    "deck": "Mazo",
+    "shelterDeck": "Mazo de refugio",
+    "wastelandDeck": "Mazo de yermo"
+  },
+  "board": {
+    "title": "Cuadricula de colonia"
+  },
+  "players": {
+    "human": "Jugador",
+    "rival": "Rival {number}"
+  },
+  "common": {
+    "close": "Cerrar"
+  },
+  "menu": {
+    "title": "Menu",
+    "resume": "Continuar",
+    "mute": "Silenciar",
+    "credits": "Creditos",
+    "exit": "Salir"
+  },
+  "settings": {
+    "label": "Abrir menu"
+  },
+  "statistics": {
+    "label": "Abrir estadisticas",
+    "title": "Estadisticas",
+    "winRate": "Victorias",
+    "cardsPlayed": "Cartas jugadas",
+    "achievements": "Retos"
   }
 }

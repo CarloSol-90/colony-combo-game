@@ -8,7 +8,7 @@
     "immediateAbility": "Gain 2 scrap.",
     "scoringRule": "1 point for each adjacent Leadership shield.",
     "radioMovement": "to_wasteland",
-    "art": "https://example.com/art/shelter/captain.png",
+    "imageUrl": "",
     "rarity": "rare"
   }
 ]

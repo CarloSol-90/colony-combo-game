@@ -53,7 +53,7 @@ describe('refillMarket', () => {
     const market = {
       group: 'wasteland' as const,
       visibleCardIds: ['card-1', 'card-2', 'card-3'],
-      deckCardIds: ['card-4'],
+      deckCardIds: ['card-5'],
     }
 
     expect(refillMarket(market)).toBe(market)

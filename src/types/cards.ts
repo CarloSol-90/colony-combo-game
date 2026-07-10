@@ -34,6 +34,7 @@ export interface OriginalCard {
   messengerMove: MessengerMove
   instantEffect: CardEffect
   endGameEffect: CardEffect
+  imageUrl: string
   storage: Record<string, unknown> | null
   reviewed: boolean
   notes: string
