@@ -47,6 +47,14 @@ describe('createInitialGameState', () => {
           batteries: INITIAL_BATTERIES,
           colony: [],
         },
+        {
+          id: 'rival-4',
+          name: 'Rival 4',
+          kind: 'ai',
+          scrap: INITIAL_SCRAP,
+          batteries: INITIAL_BATTERIES,
+          colony: [],
+        },
       ],
       markets: {
         shelter: {

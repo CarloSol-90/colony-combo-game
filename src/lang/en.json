@@ -7,13 +7,59 @@
   },
   "resources": {
     "scrap": "Scrap",
-    "batteries": "Batteries"
+    "scrapShort": "scrap",
+    "batteries": "Batteries",
+    "batteriesShort": "bat."
   },
   "markets": {
     "shelter": "Shelter",
     "wasteland": "Wasteland"
   },
   "radio": {
-    "label": "Walkie-talkie"
+    "label": "Walkie-talkie",
+    "active": "Signal",
+    "inactive": "Quiet"
+  },
+  "turn": {
+    "label": "Turn"
+  },
+  "game": {
+    "loading": "Loading colony systems...",
+    "pendingCard": "Place this card",
+    "unavailable": "The game state is not available."
+  },
+  "market": {
+    "empty": "No cards revealed",
+    "availableCard": "Available card",
+    "deck": "Deck",
+    "shelterDeck": "Shelter deck",
+    "wastelandDeck": "Wasteland deck"
+  },
+  "board": {
+    "title": "Colony grid"
+  },
+  "players": {
+    "human": "Player",
+    "rival": "Rival {number}"
+  },
+  "common": {
+    "close": "Close"
+  },
+  "menu": {
+    "title": "Menu",
+    "resume": "Resume",
+    "mute": "Mute",
+    "credits": "Credits",
+    "exit": "Exit"
+  },
+  "settings": {
+    "label": "Open menu"
+  },
+  "statistics": {
+    "label": "Open statistics",
+    "title": "Statistics",
+    "winRate": "Win rate",
+    "cardsPlayed": "Cards played",
+    "achievements": "Achievements"
   }
 }

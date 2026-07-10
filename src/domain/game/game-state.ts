@@ -53,6 +53,11 @@ export const createInitialGameState = ({
       name: 'Rival 3',
       kind: 'ai',
     }),
+    createInitialPlayerState({
+      id: 'rival-4',
+      name: 'Rival 4',
+      kind: 'ai',
+    }),
   ],
   markets: {
     shelter: createInitialMarketState({
