@@ -3,6 +3,7 @@ import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { CardDefinition, CardGroup } from '@/domain/card/card-definition'
 import ColonyBoard from '@/presentation/components/game/ColonyBoard.vue'
+import CardPreviewOverlay from '@/presentation/components/game/CardPreviewOverlay.vue'
 import GameHeader from '@/presentation/components/game/GameHeader.vue'
 import GameMenuOverlay from '@/presentation/components/game/GameMenuOverlay.vue'
 import MarketSection from '@/presentation/components/game/MarketSection.vue'
@@ -17,6 +18,9 @@ const TOTAL_TURNS = 9
 const selectedRivalId = ref<string | null>(null)
 const isGameMenuOpen = ref(false)
 const isStatisticsOpen = ref(false)
+const previewCard = ref<CardDefinition | null>(null)
+const previewSource = ref<'market' | 'board' | null>(null)
+const previewDebug = ref<string | null>(null)
 
 const marketGroups: CardGroup[] = ['shelter', 'wasteland']
 
@@ -59,7 +63,25 @@ const marketTitle = (group: CardGroup) =>
 
 const radioIsHere = (group: CardGroup) => gameStore.gameState?.radioPosition === group
 
-const handleMarketCardClick = async (cardId: string) => {
+const openCardPreview = (card: CardDefinition, source: 'market' | 'board') => {
+  previewDebug.value = `${source}:${card.id}`
+  previewCard.value = card
+  previewSource.value = source
+}
+
+const closeCardPreview = () => {
+  previewCard.value = null
+  previewSource.value = null
+  previewDebug.value = null
+}
+
+const handleBuyFromPreview = async () => {
+  if (!previewCard.value || previewSource.value !== 'market') {
+    return
+  }
+
+  const cardId = previewCard.value.id
+  closeCardPreview()
   await gameStore.buyVisibleCard(cardId)
 }
 
@@ -75,6 +97,14 @@ const handleRivalClick = (rivalId: string) => {
   selectedRivalId.value = selectedRivalId.value === rivalId ? null : rivalId
 }
 
+const handleMarketCardClick = (card: CardDefinition) => {
+  openCardPreview(card, 'market')
+}
+
+const handleBoardCardClick = (card: CardDefinition) => {
+  openCardPreview(card, 'board')
+}
+
 onMounted(() => {
   void gameStore.initializeGame()
 })
@@ -84,7 +114,7 @@ onMounted(() => {
   <GameLayout>
     <section
       v-if="gameStore.isLoading"
-      class="rounded-lg border border-stone-300/10 bg-transparent p-3 text-sm text-stone-300"
+      class="rounded-lg bg-transparent p-3 text-sm text-stone-300"
     >
       {{ t('game.loading') }}
     </section>
@@ -104,10 +134,17 @@ onMounted(() => {
 
       <section
         v-if="pendingCard"
-        class="shrink-0 rounded-md border border-teal-300/15 bg-transparent px-2.5 py-1.5"
+        class="shrink-0 rounded-md bg-transparent px-2.5 py-1.5"
       >
         <p class="text-xs uppercase tracking-[0.18em] text-teal-100/75">{{ t('game.pendingCard') }}</p>
         <p class="mt-1 text-sm font-bold text-teal-100">{{ pendingCard.name }}</p>
+      </section>
+
+      <section
+        v-if="previewDebug"
+        class="shrink-0 rounded-md bg-cyan-950/35 px-2.5 py-1 text-[0.58rem] font-mono uppercase tracking-[0.16em] text-cyan-100"
+      >
+        {{ previewDebug }}
       </section>
 
       <section class="game-markets grid shrink-0 gap-0.5">
@@ -118,8 +155,7 @@ onMounted(() => {
           :title="marketTitle(group)"
           :cards="marketCards(group)"
           :is-radio-active="radioIsHere(group)"
-          :has-pending-card="Boolean(pendingCard)"
-          @buy-card="handleMarketCardClick"
+          @view-card="handleMarketCardClick"
         />
       </section>
 
@@ -129,6 +165,7 @@ onMounted(() => {
         :cards="gameStore.cards"
         :has-pending-card="Boolean(pendingCard) && !selectedRivalId"
         @place-card="handleGridCellClick"
+        @view-card="handleBoardCardClick"
       />
 
       <RivalsSummary
@@ -140,12 +177,21 @@ onMounted(() => {
 
     <section
       v-else
-      class="rounded-lg border border-red-300/30 bg-red-950/30 p-3 text-sm text-red-100"
+      class="rounded-lg bg-red-950/30 p-3 text-sm text-red-100"
     >
       {{ gameStore.error ?? t('game.unavailable') }}
     </section>
 
     <GameMenuOverlay v-if="isGameMenuOpen" @close="isGameMenuOpen = false" />
     <StatisticsOverlay v-if="isStatisticsOpen" @close="isStatisticsOpen = false" />
+    <Teleport to="body">
+      <CardPreviewOverlay
+        v-if="previewCard"
+        :card="previewCard"
+        :can-buy="previewSource === 'market'"
+        @close="closeCardPreview"
+        @buy="handleBuyFromPreview"
+      />
+    </Teleport>
   </GameLayout>
 </template>
