@@ -33,8 +33,8 @@ const rivalDisplayName = (rival: PlayerState) => {
     <button
       v-for="rival in rivals"
       :key="rival.id"
-      class="game-rival-card rounded-md border border-stone-300/10 bg-stone-950/35 px-1.5 py-1 text-left shadow-[0_4px_12px_rgba(0,0,0,0.35)] backdrop-blur-[1px] transition hover:scale-[1.02]"
-      :class="{ 'border-teal-300/45 bg-teal-950/35': selectedRivalId === rival.id }"
+      class="game-rival-card rounded-md bg-stone-950/35 px-1.5 py-1 text-left shadow-[0_4px_12px_rgba(0,0,0,0.35)] backdrop-blur-[1px] transition hover:scale-[1.02]"
+      :class="{ 'bg-teal-950/35': selectedRivalId === rival.id }"
       type="button"
       :aria-pressed="selectedRivalId === rival.id"
       :aria-label="rivalDisplayName(rival)"
