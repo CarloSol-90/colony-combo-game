@@ -60,6 +60,24 @@
     "title": "Estadisticas",
     "winRate": "Victorias",
     "cardsPlayed": "Cartas jugadas",
-    "achievements": "Retos"
+    "achievements": "Retos",
+    "currentStreak": "Racha de victorias",
+    "currentStreakDetail": "Gana partidas seguidas para aumentar la racha.",
+    "losses": "Derrotas",
+    "lossesDetail": "Partidas perdidas durante los intentos de supervivencia.",
+    "cardsUnlocked": "Cartas desbloqueadas",
+    "cardsUnlockedDetail": "Descubre nuevas cartas jugando y completando retos.",
+    "cardsUsed": "Cartas utilizadas",
+    "cardsUsedDetail": "Juega cada carta al menos una vez para completar la coleccion.",
+    "dailyChallenges": "Retos diarios",
+    "dailyChallengesDetail": "Objetivos rapidos para conseguir progreso extra.",
+    "perfectColony": "Colonia completa",
+    "perfectColonyDetail": "Rellena todos los huecos de la colonia durante una partida.",
+    "resourceMastery": "Dominio de recursos",
+    "resourceMasteryDetail": "Termina partidas gestionando chatarra y baterias sin quedarte bloqueado.",
+    "survivalChallenges": "Desafios de supervivencia",
+    "survivalChallengesDetail": "Completa partidas bajo condiciones mas duras.",
+    "marketChallenges": "Retos de mercado",
+    "marketChallengesDetail": "Compra y coloca cartas clave antes de que termine la partida."
   }
 }

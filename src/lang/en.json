@@ -60,6 +60,24 @@
     "title": "Statistics",
     "winRate": "Win rate",
     "cardsPlayed": "Cards played",
-    "achievements": "Achievements"
+    "achievements": "Achievements",
+    "currentStreak": "Win streak",
+    "currentStreakDetail": "Win consecutive games to build up the streak.",
+    "losses": "Losses",
+    "lossesDetail": "Games lost during survival attempts.",
+    "cardsUnlocked": "Cards unlocked",
+    "cardsUnlockedDetail": "Discover new cards by playing and completing challenges.",
+    "cardsUsed": "Cards used",
+    "cardsUsedDetail": "Play every card at least once to complete the collection.",
+    "dailyChallenges": "Daily challenges",
+    "dailyChallengesDetail": "Quick objectives for extra progress.",
+    "perfectColony": "Complete colony",
+    "perfectColonyDetail": "Fill every colony slot during a game.",
+    "resourceMastery": "Resource mastery",
+    "resourceMasteryDetail": "Finish games while managing scrap and batteries without getting stuck.",
+    "survivalChallenges": "Survival challenges",
+    "survivalChallengesDetail": "Complete games under tougher conditions.",
+    "marketChallenges": "Market challenges",
+    "marketChallengesDetail": "Buy and place key cards before the game ends."
   }
 }
