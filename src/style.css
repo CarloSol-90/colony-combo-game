@@ -154,10 +154,6 @@ button:disabled {
     height: 2.5rem;
   }
 
-  .game-market-card {
-    width: 4.9rem;
-  }
-
   .game-board-panel {
     padding: 0.375rem;
   }
@@ -190,10 +186,6 @@ button:disabled {
   .game-resource-icon {
     width: 2rem;
     height: 2rem;
-  }
-
-  .game-market-card {
-    width: 4.25rem;
   }
 
   .game-market-card span:last-child {

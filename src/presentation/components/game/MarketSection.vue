@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import cardBackShelter from '@/assets/card-back-shelter-square.png'
 import cardBackWasteland from '@/assets/card-back-wasteland-square.png'
-import colonySlotDummy from '@/assets/colony-slot-dummy-transparent.png'
+import cardPreviewDummy from '@/assets/card-preview-dummy.webp'
 import type { CardDefinition, CardGroup } from '@/domain/card/card-definition'
 import RadioMarker from './RadioMarker.vue'
 
@@ -12,13 +12,12 @@ interface MarketSectionProps {
   title: string
   cards: CardDefinition[]
   isRadioActive: boolean
-  hasPendingCard: boolean
 }
 
 const props = defineProps<MarketSectionProps>()
 
 defineEmits<{
-  buyCard: [cardId: string]
+  'view-card': [card: CardDefinition]
 }>()
 
 const { t } = useI18n()
@@ -45,48 +44,61 @@ const cardLabel = (card: CardDefinition | null, index: number) => {
 </script>
 
 <template>
-  <article class="game-market-panel rounded-md border border-stone-300/10 bg-transparent p-1.5">
-    <div class="mb-0.5 flex items-center justify-between gap-2">
-      <h2 class="text-xs font-black uppercase tracking-[0.16em] text-stone-100">
+  <article class="game-market-panel rounded-md bg-transparent p-0.5">
+    <div class="mb-0 flex items-center gap-0.5">
+      <h2 class="min-w-0 flex-1 text-[0.58rem] font-black uppercase tracking-[0.16em] text-stone-100">
         {{ title }}
       </h2>
-      <div class="game-radio-slot flex h-10 w-10 items-center justify-end">
-        <RadioMarker v-if="isRadioActive" />
-      </div>
     </div>
 
-    <div class="grid grid-cols-4 gap-1">
-      <button
-        class="game-market-card aspect-square overflow-visible rounded bg-transparent p-0"
-        type="button"
-        :aria-label="deckLabel"
-        disabled
+    <div
+      class="relative mt-0.5 rounded-md px-0.5 py-0.5"
+      :class="
+        isRadioActive
+          ? 'border-2 border-cyan-300/70 shadow-[0_0_0_1px_rgba(45,212,191,0.1),0_0_14px_rgba(45,212,191,0.22)]'
+          : 'border border-transparent'
+      "
+    >
+      <div
+        v-if="isRadioActive"
+        class="absolute right-0.5 top-[-1.55rem] z-10 flex h-10 w-10 items-center justify-center"
       >
-        <img
-          class="h-full w-full object-cover drop-shadow-[0_5px_10px_rgba(0,0,0,0.55)]"
-          :src="deckBackImage"
-          :alt="deckLabel"
-        />
-      </button>
+        <RadioMarker />
+      </div>
 
-      <button
-        v-for="(card, index) in displayCards"
-        :key="card?.id ?? `${group}-preview-${index}`"
-        class="game-market-card aspect-square overflow-visible rounded bg-transparent p-0 transition hover:scale-[1.03]"
-        type="button"
-        :aria-disabled="hasPendingCard || !card"
-        @click="card && !hasPendingCard && $emit('buyCard', card.id)"
-      >
-        <img
-          class="h-full w-full object-cover drop-shadow-[0_5px_10px_rgba(0,0,0,0.55)]"
-          :class="{ 'opacity-85 saturate-[0.86]': !card }"
-          :src="card?.imageUrl || colonySlotDummy"
-          :alt="cardLabel(card, index)"
-        />
-        <span class="sr-only">
-          {{ cardLabel(card, index) }}
-        </span>
-      </button>
+      <div class="grid grid-cols-4 gap-[1px]">
+        <button
+          class="game-market-card aspect-square h-full w-full overflow-visible rounded bg-transparent p-0"
+          type="button"
+          :aria-label="deckLabel"
+          disabled
+        >
+          <img
+            class="h-full w-full object-cover drop-shadow-[0_5px_10px_rgba(0,0,0,0.55)]"
+            :src="deckBackImage"
+            :alt="deckLabel"
+          />
+        </button>
+
+        <button
+          v-for="(card, index) in displayCards"
+          :key="card?.id ?? `${group}-preview-${index}`"
+          class="game-market-card aspect-square h-full w-full overflow-visible rounded bg-transparent p-0 transition hover:scale-[1.02]"
+          type="button"
+          :aria-disabled="!card"
+          @click="card && $emit('view-card', card)"
+        >
+          <img
+            class="h-full w-full object-cover drop-shadow-[0_5px_10px_rgba(0,0,0,0.55)]"
+            :class="{ 'opacity-85 saturate-[0.86]': !card }"
+            :src="card?.imageUrl || cardPreviewDummy"
+            :alt="cardLabel(card, index)"
+          />
+          <span class="sr-only">
+            {{ cardLabel(card, index) }}
+          </span>
+        </button>
+      </div>
     </div>
   </article>
 </template>

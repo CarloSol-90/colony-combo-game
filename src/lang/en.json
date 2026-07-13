@@ -36,7 +36,7 @@
     "wastelandDeck": "Wasteland deck"
   },
   "board": {
-    "title": "Colony grid"
+    "title": "Colony"
   },
   "players": {
     "human": "Player",
@@ -44,6 +44,15 @@
   },
   "common": {
     "close": "Close"
+  },
+  "cardPreview": {
+    "title": "Card",
+    "buy": "Buy",
+    "close": "Close",
+    "cost": "Cost",
+    "shields": "Shields",
+    "ability": "Action",
+    "scoring": "Scoring"
   },
   "menu": {
     "title": "Menu",

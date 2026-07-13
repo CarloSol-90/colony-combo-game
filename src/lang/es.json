@@ -36,7 +36,7 @@
     "wastelandDeck": "Mazo de yermo"
   },
   "board": {
-    "title": "Cuadricula de colonia"
+    "title": "Colonia"
   },
   "players": {
     "human": "Jugador",
@@ -44,6 +44,15 @@
   },
   "common": {
     "close": "Cerrar"
+  },
+  "cardPreview": {
+    "title": "Carta",
+    "buy": "Comprar",
+    "close": "Cerrar",
+    "cost": "Coste",
+    "shields": "Escudos",
+    "ability": "Accion",
+    "scoring": "Puntuacion"
   },
   "menu": {
     "title": "Menu",
